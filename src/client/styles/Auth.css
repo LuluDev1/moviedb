@@ -1,0 +1,55 @@
+.auth_screen {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+.auth_screen .left_side {
+  width: 50%;
+  height: 100%;
+  background-color: red;
+}
+.auth_screen .left_side img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 0;
+     object-position: 0 0;
+  background-blend-mode: normal;
+}
+.auth_screen .right_side {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: WHITE;
+}
+.auth_screen .right_side .logo {
+  width: 350px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.auth_screen .right_side .login-form {
+  width: 50%;
+  padding: 22px;
+}
+.auth_screen .right_side .login-form-button {
+  width: 50%;
+  margin-right: 20px;
+}
+.auth_screen .right_side .login-form-forgot {
+  color: #d52814;
+}
+.auth_screen .right_side a {
+  color: #d52814;
+}
+.auth_screen .right_side .login-form-button {
+  background-color: #d52814;
+  color: white;
+  cursor: pointer;
+}
+.auth_screen .right_side .login-form-button:hover {
+  background-color: #d52814;
+}/*# sourceMappingURL=Auth.css.map */
