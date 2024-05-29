@@ -1,13 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Auth.scss";
+// Images
 import welcome from "../assets/welcome.jpg";
 import logo from "../assets/logo.png";
+// Antd components
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
+// Firebase
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+} from "firebase/auth";
+import { app } from "../../server/Auth";
+// Import navigation comp
+import { useNavigate } from "react-router-dom";
 
+//
 export default function Authentication() {
-    const onFinish = (values) => {
-        console.log("Received values of form: ", values);
+    // Navigate
+    const navigate = useNavigate();
+
+    // Email and password State
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    // Firebase auth from suth server
+    const auth = getAuth(app);
+
+    // Login Function
+    const handleLogin = () => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
+    };
+    // Register Function
+    const handleRegister = () => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
     };
     return (
         <div className="auth_screen">
@@ -22,21 +61,23 @@ export default function Authentication() {
                     className="login-form"
                     initialValues={{
                         remember: true,
-                    }}
-                    onFinish={onFinish}>
+                    }}>
                     <Form.Item
-                        name="username"
+                        name="Email"
                         rules={[
                             {
                                 required: true,
-                                message: "Please input your Username!",
+                                message: "Please input your Email!",
                             },
                         ]}>
                         <Input
                             prefix={
                                 <UserOutlined className="site-form-item-icon" />
                             }
-                            placeholder="Username"
+                            placeholder="Email"
+                            onInput={(e) => setEmail(e.target.value)}
+                            pattern="email"
+                            autoFocus
                         />
                     </Form.Item>
                     <Form.Item
@@ -53,6 +94,7 @@ export default function Authentication() {
                             }
                             type="password"
                             placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </Form.Item>
                     <Form.Item>
