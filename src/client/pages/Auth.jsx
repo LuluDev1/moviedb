@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Auth.scss";
 // Images
 import welcome from "../assets/welcome.jpg";
@@ -11,6 +11,7 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    onAuthStateChanged,
 } from "firebase/auth";
 import { app } from "../../server/Auth";
 // Import navigation comp
@@ -33,9 +34,10 @@ export default function Authentication() {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                navigate("/explore");
             })
             .catch((error) => {
-                alert(error.message);
+                console.log(error.message);
             });
     };
     // Register Function
@@ -43,11 +45,23 @@ export default function Authentication() {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                alert("Welcome");
+                navigate("/explore");
             })
             .catch((error) => {
-                alert(error.message);
+                alert("Please Login");
             });
     };
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                navigate("/explore");
+            } else {
+                navigate("/");
+            }
+        });
+    }, []);
     return (
         <div className="auth_screen">
             <div className="left_side">
@@ -114,10 +128,11 @@ export default function Authentication() {
                         <Button
                             type="primary"
                             htmlType="submit"
-                            className="login-form-button">
+                            className="login-form-button"
+                            onClick={handleLogin}>
                             Log in
                         </Button>
-                        Or <a href="">register now!</a>
+                        Or <a onClick={handleRegister}>register now!</a>
                     </Form.Item>
                 </Form>
             </div>

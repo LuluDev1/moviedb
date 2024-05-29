@@ -1,20 +1,18 @@
+import 'dotenv/config'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const key = ""
+
 const firebaseConfig = {
-    apiKey: "AIzaSyCVHfFnrvboniMdoH0phiJwpGJfa-ZnR2k",
-    authDomain: "themoviedb-e87fc.firebaseapp.com",
-    databaseURL: "https://themoviedb-e87fc-default-rtdb.firebaseio.com",
-    projectId: "themoviedb-e87fc",
-    storageBucket: "themoviedb-e87fc.appspot.com",
-    messagingSenderId: "947542397682",
-    appId: "1:947542397682:web:ebeed286f45a811d05b66b",
-    measurementId: "G-Y4S7SFNMRV"
+    apiKey: key,
+    authDomain: "moviedb-61d97.firebaseapp.com",
+    projectId: "moviedb-61d97",
+    storageBucket: "moviedb-61d97.appspot.com",
+    messagingSenderId: "947800172744",
+    appId: "1:947800172744:web:579142ce2c36c61b445dfd",
+    measurementId: "G-TSR3ZNQKX0"
 };
 
 // Initialize Firebase
