@@ -1,12 +1,9 @@
-import 'dotenv/config'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 
-const key = ""
 
 const firebaseConfig = {
-    apiKey: key,
+    apiKey: import.meta.env.VITE_KEY,
     authDomain: "moviedb-61d97.firebaseapp.com",
     projectId: "moviedb-61d97",
     storageBucket: "moviedb-61d97.appspot.com",
@@ -15,8 +12,13 @@ const firebaseConfig = {
     measurementId: "G-TSR3ZNQKX0"
 };
 
+// Log to verify the config (for debugging purposes)
+console.log(firebaseConfig);
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-export { app, analytics }
+// Export app if needed
+export { app };
+
+
