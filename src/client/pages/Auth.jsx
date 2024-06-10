@@ -25,12 +25,14 @@ export default function Authentication() {
     // Email and password State
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     // Firebase auth from suth server
     const auth = getAuth(app);
 
     // Login Function
     const handleLogin = () => {
+        setErrorMessage("");
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
@@ -38,6 +40,7 @@ export default function Authentication() {
             })
             .catch((error) => {
                 console.log(error.message);
+                setErrorMessage("User Not Found");
             });
     };
     // Register Function
@@ -49,7 +52,7 @@ export default function Authentication() {
                 navigate("/explore");
             })
             .catch((error) => {
-                alert("Please Login");
+                setErrorMessage("Please Login");
             });
     };
 
@@ -112,6 +115,7 @@ export default function Authentication() {
                         />
                     </Form.Item>
                     <Form.Item>
+                        <p>{errorMessage}</p>
                         <Form.Item
                             name="remember"
                             valuePropName="checked"
