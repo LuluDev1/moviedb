@@ -11,8 +11,7 @@ const PORT = 3000;
 // TMDB API KEY
 const key = process.env.VITE_TMDB_API_KEY;
 
-let trending;
-let lastTrendingFetched;
+
 
 // TMDB API OPTIONS
 const options = {
@@ -23,6 +22,9 @@ const options = {
   }
 };
 
+// 
+let trending;
+let lastTrendingFetched;
 // FETCHING ALL TRENDING MOVIES AND TVSHOWS
 app.get("/trending", (req, res) => {
   // CHECKS IF ITS BEEN LONGGER THAN A DAY SINCE LAST FETCHED
@@ -42,7 +44,34 @@ app.get("/trending", (req, res) => {
   } else {
     // IF ITS NOT LONGER THAN A DAY USE CACHE
     res.json(trending);
-    console.log("cache")
+    console.log("cache trending")
+  }
+});
+
+// 
+let populartv;
+let lastpopulartvFetched
+
+// Fetching the latest popular tv
+app.get("/populartv", (req, res) => {
+  // CHECKS IF ITS BEEN LONGGER THAN A DAY SINCE LAST FETCHED
+  if (!lastpopulartvFetched || Date.now() - lastpopulartvFetched > 86400000) {
+    // SETS IT TO THE LAST TIME WE FETCHED 
+    lastpopulartvFetched = Date.now();
+    fetch('https://api.themoviedb.org/3/tv/popular?language=en-US&page=1', options)
+      .then(response => response.json())
+      .then(response => {
+        populartv = response;
+        res.json(populartv);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({ error: "Internal Server Error" });
+      });
+  } else {
+    // IF ITS NOT LONGER THAN A DAY USE CACHE
+    res.json(populartv);
+    console.log("cache populartv")
   }
 });
 
