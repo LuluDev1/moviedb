@@ -9,6 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.3.7",
     "antd": "^5.17.3",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
