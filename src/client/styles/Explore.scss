@@ -4,6 +4,7 @@
     gap: 20px;
     display: flex;
     flex-direction: column;
+    background-color: #0a0908;
 
     .cardContainer {
         display: flex;
@@ -14,23 +15,26 @@
 
         .scrollBtn {
             font-size: 33px;
+            color: #3E7CB1;
         }
 
         .scrollContainer {
             display: flex;
-            gap: 50px;
+            gap: 35px;
             overflow: hidden;
             width: 90%;
             height: 100%;
             margin: 0 auto;
             align-items: center;
-           
 
             .poster {
                 min-width: 200px;
                 height: 280px;
                 background-color: yellow;
                 display: flex;
+                box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
+                overflow: hidden;
                 img {
                     width: 100%;
                     height: 100%;

@@ -6,10 +6,7 @@ export default function Explore() {
     return (
         <div className="exploreScreen">
             <CardContainer id="trending" />
-            <CardContainer id="lewis" />
-            <CardContainer id="lu" />
-            <CardContainer id="cam" />
-
+            <CardContainer id="trending" />
         </div>
     );
 }

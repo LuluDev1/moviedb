@@ -4,6 +4,7 @@
   gap: 20px;
   display: flex;
   flex-direction: column;
+  background-color: #0a0908;
 }
 .exploreScreen .cardContainer {
   display: flex;
@@ -14,10 +15,11 @@
 }
 .exploreScreen .cardContainer .scrollBtn {
   font-size: 33px;
+  color: #3E7CB1;
 }
 .exploreScreen .cardContainer .scrollContainer {
   display: flex;
-  gap: 50px;
+  gap: 35px;
   overflow: hidden;
   width: 90%;
   height: 100%;
@@ -29,6 +31,9 @@
   height: 280px;
   background-color: yellow;
   display: flex;
+  box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
 }
 .exploreScreen .cardContainer .scrollContainer .poster img {
   width: 100%;
