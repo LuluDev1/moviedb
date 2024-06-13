@@ -1,46 +1,36 @@
 .exploreScreen {
   width: 100%;
   height: 100vh;
-}
-.exploreScreen .carouselContainer {
-  height: 10vh;
-  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .exploreScreen .cardContainer {
   display: flex;
-  height: 250px;
+  height: 300px;
   width: 90%;
   margin: 0 auto;
   position: relative;
 }
-.exploreScreen .cardContainer .scrollLeftBtn,
-.exploreScreen .cardContainer .scrollRightBtn {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.exploreScreen .cardContainer .scrollLeftBtn {
-  left: -30px;
-}
-.exploreScreen .cardContainer .scrollRightBtn {
-  right: -40px !important;
+.exploreScreen .cardContainer .scrollBtn {
+  font-size: 33px;
 }
 .exploreScreen .cardContainer .scrollContainer {
   display: flex;
-  gap: 5%;
-  width: 100%;
-  padding: 0 32px;
+  gap: 50px;
+  overflow: hidden;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
   align-items: center;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 .exploreScreen .cardContainer .scrollContainer .poster {
-  height: 220px;
-  min-width: 160px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  min-width: 200px;
+  height: 280px;
   background-color: yellow;
-  border-radius: 12px;
+  display: flex;
+}
+.exploreScreen .cardContainer .scrollContainer .poster img {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=Explore.css.map */
