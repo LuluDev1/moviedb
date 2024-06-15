@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 
 // Icons
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
+import { getTrailer } from "../../server/main";
 
 export default function Carousel() {
     // State for the data

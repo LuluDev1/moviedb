@@ -99,7 +99,19 @@ app.get("/nowplaying", (_req, res) => {
   }
 })
 
+// get movie trialer
+const getTrailer = (movie_id) => {
+  fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`, options)
+    .then(response => response.json())
+    .then(response => response)
+    .catch(err => console.error(err));
+
+}
+
 
 ViteExpress.listen(app, PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`),
 );
+
+
+export { getTrailer }
