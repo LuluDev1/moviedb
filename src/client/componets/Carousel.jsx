@@ -69,12 +69,18 @@ export default function Carousel() {
                                     <h1 className="title">
                                         {movie.original_title}
                                     </h1>
+                                    <p>
+                                        {Math.floor(movie.vote_average * 10)}%
+                                    </p>
+                                    <p>{movie.overview}</p>
                                 </div>
                                 <div className="trailers">
                                     <iframe
+                                        loading="lazy"
                                         className="trailer"
                                         src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                                     <iframe
+                                        loading="lazy"
                                         className="trailer"
                                         src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                                 </div>

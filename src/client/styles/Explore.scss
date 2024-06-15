@@ -1,11 +1,11 @@
 .exploreScreen {
     height: 100vh;
     background-color: black;
-    padding-top: 10px;
+    padding-top: 80px;
 
     .carouselContainer {
         width: 1200px;
-        height: 80%;
+        height: 600px;
         background-color: green;
         display: flex;
         justify-content: center;
@@ -28,35 +28,40 @@
                     height: 100%;
                     background-color: rgba(0, 0, 0, 0.5);
                     display: flex;
-                    padding: 22px;
+
                     justify-content: center;
 
                     .poster {
                         width: 200px;
                         height: 300px;
                         margin-left: 32px;
-                        border-radius: 22px;
+                        border-radius: 12px;
+                        margin-top: 40px;
                     }
                     .movieinfo {
-                        width: 100%;
+                        width: 50%;
                         display: flex;
-                        justify-content: space-between;
+                        color: white;
 
-                        margin-top: 10px;
-
+                        flex-direction: column;
+                        padding-left: 32px;
+                        padding-top: 42px;
                         .title {
-                            font-size: 24px;
+                            font-size: 3rem;
                             color: white;
-                            margin-left: 32px;
                         }
                         .rating {
                             font-size: 24px;
                             color: white;
-                            margin-right: 32px;
+                        }
+                        p {
+                            font-size: 12px;
+                            color: white;
+                            margin-top: 12px;
                         }
                     }
                     .trailers {
-                        width: 100%;
+                        width: 50%;
                         display: flex;
 
                         flex-direction: column;
