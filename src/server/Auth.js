@@ -12,8 +12,7 @@ const firebaseConfig = {
     measurementId: "G-TSR3ZNQKX0"
 };
 
-// Log to verify the config (for debugging purposes)
-console.log(firebaseConfig);
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

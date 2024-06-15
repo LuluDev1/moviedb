@@ -5,7 +5,6 @@ import React from "react";
 import "../styles/Explore.css";
 
 // COMPONENTS
-import CardContainer from "../componets/CardContainer";
 import Carousel from "../componets/Carousel";
 
 // THE EXPLORE PAGE FUNCTION
@@ -13,8 +12,6 @@ export default function Explore() {
     return (
         <div className="exploreScreen">
             <Carousel />
-            <CardContainer id="trending" />
-            <CardContainer id="populartv" />
         </div>
     );
 }

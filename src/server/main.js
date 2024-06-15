@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import fetch from "node-fetch";
 import ViteExpress from "vite-express";
 import dotenv from 'dotenv';
@@ -74,6 +74,31 @@ app.get("/populartv", (req, res) => {
     console.log("cache populartv")
   }
 });
+
+// 
+let nowplaying;
+let lastnowPlayingFetched;
+
+// Fethcing the now Playing 
+app.get("/nowplaying", (_req, res) => {
+
+  if (!lastnowPlayingFetched || Date.now() - lastnowPlayingFetched > 86400000) {
+    lastnowPlayingFetched = Date.now()
+    fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+      .then(response => response.json())
+      .then(response => {
+        nowplaying = response;
+        res.json(nowplaying)
+      })
+      .catch(err => res.status(500).json({ error: "Internal Server Error" }));
+
+  } else {
+    res.json(nowplaying);
+    console.log("cache now playting")
+
+  }
+})
+
 
 ViteExpress.listen(app, PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`),

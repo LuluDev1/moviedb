@@ -1,58 +1,84 @@
 .exploreScreen {
-  width: 100%;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
-  background-color: #0a0908;
-  padding-bottom: 30px;
-  overflow: hidden;
+  height: 100vh;
+  background-color: black;
+  padding-top: 10px;
 }
 .exploreScreen .carouselContainer {
-  background-color: RED;
-  height: 80vh;
+  width: 1200px;
+  height: 80%;
+  background-color: green;
   display: flex;
-  gap: 10%;
-}
-.exploreScreen .carouselContainer .page {
-  background-color: #3e7cb1;
-  height: 100%;
-  min-width: 500px;
-  margin: 0 auto;
-}
-.exploreScreen .cardContainer {
-  display: flex;
-  height: 300px;
-  width: 90%;
-  margin: 0 auto;
-  position: relative;
-}
-.exploreScreen .cardContainer .scrollBtn {
-  font-size: 33px;
-  color: #3e7cb1;
-}
-.exploreScreen .cardContainer .scrollContainer {
-  display: flex;
-  gap: 35px;
-  overflow: hidden;
-  width: 90%;
-  height: 100%;
-  margin: 0 auto;
+  justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
-.exploreScreen .cardContainer .scrollContainer .poster {
-  min-width: 200px;
-  height: 280px;
-  background-color: yellow;
-  box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.1);
-  border-radius: 9px;
-  overflow: hidden;
-}
-.exploreScreen .cardContainer .scrollContainer .poster img {
+.exploreScreen .carouselContainer .carousel {
   width: 100%;
   height: 100%;
+  background-color: yellow;
+  display: flex;
+  overflow: hidden;
 }
-.exploreScreen .cardContainer .scrollContainer .poster:hover {
+.exploreScreen .carouselContainer .carousel .carouselItem {
+  min-width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.exploreScreen .carouselContainer .carousel .carouselItem .shade {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  padding: 22px;
+  justify-content: center;
+}
+.exploreScreen .carouselContainer .carousel .carouselItem .shade .poster {
+  width: 200px;
+  height: 300px;
+  margin-left: 32px;
+  border-radius: 22px;
+}
+.exploreScreen .carouselContainer .carousel .carouselItem .shade .movieinfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.exploreScreen .carouselContainer .carousel .carouselItem .shade .movieinfo .title {
+  font-size: 24px;
+  color: white;
+  margin-left: 32px;
+}
+.exploreScreen .carouselContainer .carousel .carouselItem .shade .movieinfo .rating {
+  font-size: 24px;
+  color: white;
+  margin-right: 32px;
+}
+.exploreScreen .carouselContainer .carousel .carouselItem .shade .trailers {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.exploreScreen .carouselContainer .carousel .carouselItem .shade .trailers .trailer {
+  width: 400px;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-left: 32px;
   cursor: pointer;
-  transform: scale(1.05);
-  transition: transform 0.7s;
+  margin-top: 16px;
+}
+.exploreScreen .carouselContainer .btnCtn {
+  width: 160px;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 85%;
+  left: calc(50% - 80px);
+  font-size: 18px;
+  color: white;
 }/*# sourceMappingURL=Explore.css.map */
