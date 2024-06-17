@@ -1,7 +1,7 @@
 .exploreScreen {
-  height: 100vh;
-  background-color: black;
+  background-color: #f5f5f5;
   padding-top: 10px;
+  padding-bottom: 100px;
 }
 .exploreScreen .logo {
   width: 250px;
@@ -100,4 +100,40 @@
   left: calc(50% - 80px);
   font-size: 18px;
   color: white;
+}
+.exploreScreen .slideContainer {
+  height: 300px;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 40px;
+  border-radius: 10px;
+}
+.exploreScreen .slideContainer ::-ms-thumb {
+  background-color: white;
+}
+.exploreScreen .slideContainer .poster {
+  min-width: 200px;
+  height: 300px;
+  margin-left: 32px;
+  border-radius: 12px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: blue;
+  overflow: hidden;
+}
+.exploreScreen .slideContainer .poster img {
+  width: 100%;
+  height: 100%;
+}
+.exploreScreen .slideTitle {
+  font-size: 24px;
+  margin-top: 25px;
+  margin-left: 4%;
+}
+.exploreScreen .slideTitle h1 {
+  font-size: 2rem;
 }/*# sourceMappingURL=Explore.css.map */
