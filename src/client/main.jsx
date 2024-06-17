@@ -9,20 +9,25 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // THE DIFFRENT PAGES
 import Auth from "./pages/Auth";
 import Explore from "./pages/Explore";
+import Movie from "./pages/Movie";
 
 // DEIFINE SPECIFIC ROUTES FOR THE PAGES
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Auth />,
-    },
-    {
-        path: "/explore",
-        element: <Explore />,
-    },
+  {
+    path: "/",
+    element: <Auth />,
+  },
+  {
+    path: "/explore",
+    element: <Explore />,
+  },
+  {
+    path: "/explore/movie",
+    element: <Movie />,
+  },
 ]);
 
 // RENDERING THE APP
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <RouterProvider router={router} />
+  <RouterProvider router={router} />
 );

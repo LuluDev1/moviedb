@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config(); // Load environment variables from .env file
 
 const app = express();
-const PORT = 3000;
+const PORT = 8000;
 
 // TMDB API KEY
 const key = process.env.VITE_TMDB_API_KEY;
