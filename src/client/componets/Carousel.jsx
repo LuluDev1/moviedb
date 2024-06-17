@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 
 // Icons
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
-import { getTrailer } from "../../server/main";
 
 export default function Carousel() {
     // State for the data
@@ -38,6 +37,9 @@ export default function Carousel() {
         }
     };
 
+    //
+    // TMDB API OPTIONS
+
     let backdropurl = "https://image.tmdb.org/t/p/original";
 
     useEffect(() => {
@@ -66,6 +68,7 @@ export default function Carousel() {
                                     src={backdropurl + movie.poster_path}
                                     alt=""
                                 />
+
                                 <div className="movieinfo">
                                     <h1 className="title">
                                         {movie.original_title}
@@ -74,16 +77,6 @@ export default function Carousel() {
                                         {Math.floor(movie.vote_average * 10)}%
                                     </p>
                                     <p>{movie.overview}</p>
-                                </div>
-                                <div className="trailers">
-                                    <iframe
-                                        loading="lazy"
-                                        className="trailer"
-                                        src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-                                    <iframe
-                                        loading="lazy"
-                                        className="trailer"
-                                        src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                                 </div>
                             </div>
                         </div>

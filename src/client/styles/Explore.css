@@ -1,7 +1,17 @@
 .exploreScreen {
   height: 100vh;
   background-color: black;
-  padding-top: 80px;
+  padding-top: 10px;
+}
+.exploreScreen .logo {
+  width: 250px;
+  height: 60px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.exploreScreen .logo img {
+  width: 100%;
+  height: 100%;
 }
 .exploreScreen .carouselContainer {
   width: 1200px;
@@ -37,15 +47,19 @@
   height: 300px;
   margin-left: 32px;
   border-radius: 12px;
-  margin-top: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .exploreScreen .carouselContainer .carousel .carouselItem .shade .movieinfo {
   width: 50%;
   display: flex;
   color: white;
+  height: 60%;
   flex-direction: column;
   padding-left: 32px;
-  padding-top: 42px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .exploreScreen .carouselContainer .carousel .carouselItem .shade .movieinfo .title {
   font-size: 3rem;
@@ -56,7 +70,7 @@
   color: white;
 }
 .exploreScreen .carouselContainer .carousel .carouselItem .shade .movieinfo p {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: white;
   margin-top: 12px;
 }
